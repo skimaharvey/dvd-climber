@@ -3,6 +3,7 @@ pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/access/AccessControl.sol";
 import "@openzeppelin/contracts/utils/Address.sol";
+import "hardhat/console.sol";
 
 /**
  * @title ClimberTimelock
@@ -111,6 +112,7 @@ contract ClimberTimelock is AccessControl {
         }
 
         require(getOperationState(id) == OperationState.ReadyForExecution);
+        console.log("passed getOperationState");
         operations[id].executed = true;
     }
 
@@ -118,6 +120,7 @@ contract ClimberTimelock is AccessControl {
         require(msg.sender == address(this), "Caller must be timelock itself");
         require(newDelay <= 14 days, "Delay must be 14 days or less");
         delay = newDelay;
+        console.log("updated delay");
     }
 
     receive() external payable {}

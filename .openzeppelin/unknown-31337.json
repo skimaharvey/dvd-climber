@@ -3,14 +3,14 @@
   "proxies": [
     {
       "address": "0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512",
-      "txHash": "0x8874d9839c21a3c228edf87c37a15e758156096234068b8da00a8fd1ee8514d5",
+      "txHash": "0x362fa9383b68132e5cad49de96319d32b2bd54c390a2c83499079edb0136b517",
       "kind": "uups"
     }
   ],
   "impls": {
-    "0aaf1e8fa8ebfeccab97c87533e8fd6c091ff915b3df463c35c698cba99eee32": {
+    "266dfbd0eca5377fa5b09575129db80d927a780603d86a74c89fdb8395d0529d": {
       "address": "0x5FbDB2315678afecb367f032d93F642f64180aa3",
-      "txHash": "0x7642c036a91cce2cce3a22bddca158a4c56e1b6995ab6f67d327ed5039b49eb2",
+      "txHash": "0xb99ce6d079af1ce77c0807f4ad4d7221e12cf0019bcea5c27d47c49d0a7d1029",
       "layout": {
         "storage": [
           {
@@ -53,7 +53,7 @@
             "contract": "UUPSUpgradeable",
             "label": "__gap",
             "type": "t_array(t_uint256)50_storage",
-            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol:107"
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol:110"
           },
           {
             "contract": "ClimberVault",
@@ -66,6 +66,85 @@
             "label": "_sweeper",
             "type": "t_address",
             "src": "contracts/ClimberVault.sol:22"
+          }
+        ],
+        "types": {
+          "t_uint256": {
+            "label": "uint256"
+          },
+          "t_address": {
+            "label": "address"
+          },
+          "t_array(t_uint256)50_storage": {
+            "label": "uint256[50]"
+          },
+          "t_array(t_uint256)49_storage": {
+            "label": "uint256[49]"
+          },
+          "t_bool": {
+            "label": "bool"
+          }
+        }
+      }
+    },
+    "b6693f15ee50edbe9d14eb4f3574af5fb4dcd9b83a7e6f0ee6bc1c4d25a7b94e": {
+      "address": "0xCE3478A9E0167a6Bc5716DC39DbbbfAc38F27623",
+      "txHash": "0x4247c1ffc3334b0c2684fca99c57b19906b9994f5a3e7267c223911d3cc96dc7",
+      "layout": {
+        "storage": [
+          {
+            "contract": "Initializable",
+            "label": "_initialized",
+            "type": "t_bool",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:39"
+          },
+          {
+            "contract": "Initializable",
+            "label": "_initializing",
+            "type": "t_bool",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:44"
+          },
+          {
+            "contract": "ContextUpgradeable",
+            "label": "__gap",
+            "type": "t_array(t_uint256)50_storage",
+            "src": "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol:36"
+          },
+          {
+            "contract": "OwnableUpgradeable",
+            "label": "_owner",
+            "type": "t_address",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:22"
+          },
+          {
+            "contract": "OwnableUpgradeable",
+            "label": "__gap",
+            "type": "t_array(t_uint256)49_storage",
+            "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:87"
+          },
+          {
+            "contract": "ERC1967UpgradeUpgradeable",
+            "label": "__gap",
+            "type": "t_array(t_uint256)50_storage",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/ERC1967/ERC1967UpgradeUpgradeable.sol:211"
+          },
+          {
+            "contract": "UUPSUpgradeable",
+            "label": "__gap",
+            "type": "t_array(t_uint256)50_storage",
+            "src": "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol:110"
+          },
+          {
+            "contract": "ClimberVaultV2",
+            "label": "_lastWithdrawalTimestamp",
+            "type": "t_uint256",
+            "src": "contracts/ClimberVaultV2.sol:21"
+          },
+          {
+            "contract": "ClimberVaultV2",
+            "label": "_sweeper",
+            "type": "t_address",
+            "src": "contracts/ClimberVaultV2.sol:22"
           }
         ],
         "types": {
